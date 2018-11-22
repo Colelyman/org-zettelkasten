@@ -79,5 +79,5 @@ to your configuration.")
                          :follow #'org-id-open
                          :complete #'ozk-id-complete-link)
 
-(provide 'ozk)
-;;; ozk.el ends here
+(provide 'org-zettelkasten)
+;;; org-zettelkasten.el ends here
