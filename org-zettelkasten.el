@@ -71,10 +71,6 @@ to your configuration.")
                                               nil
                                               (format-time-string "%Y" (current-time))))))
 
-
-;; (setq org-capture-templates
-;;       (add-to-list 'org-capture-templates ozk-capture-template))
-
 (org-link-set-parameters "id"
                          :follow #'org-id-open
                          :complete #'ozk-id-complete-link)
