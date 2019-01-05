@@ -29,8 +29,7 @@
   "An org-capture-template for Zettel entries.
 
 To use this template add
-`(setq org-capture-templates
-       (add-to-list 'org-capture-templates ozk-capture-template))'
+`(add-to-list 'org-capture-templates ozk-capture-template)'
 to your configuration.")
 
 (defun ozk-set-zettelkasten-file ()
