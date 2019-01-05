@@ -10,8 +10,11 @@
 (require 'org)
 (require 'org-id)
 
-(defvar ozk-zettelkasten-file "~/org/zettelkasten.org"
-   "The file path to the Zettelkasten file.")
+(defvar ozk-zettelkasten-files '("~/org/zettelkasten.org")
+   "The file paths to Zettelkasten files.")
+
+(defvar ozk-zettelkasten-file (car ozk-zettelkasten-files)
+  "The file path to the current Zettelkasten file, this defaults to the first element of `ozk-zettelkasten-files'.")
 
 (defvar ozk-header-time-format "%Y%m%d%H%M"
   "Time format string for the Zettel headers.")
@@ -29,6 +32,12 @@ To use this template add
 `(setq org-capture-templates
        (add-to-list 'org-capture-templates ozk-capture-template))'
 to your configuration.")
+
+(defun ozk-set-zettelkasten-file ()
+  "Set `ozk-zettelkasten-file' from `ozk-zettelkasten-files'."
+  (interactive)
+  (setq ozk-zettelkasten-file
+        (completing-read "Zettelkasten file: " ozk-zettelkasten-files)))
 
 (defun ozk-create-zettel ()
   "Create a new Zettel."
